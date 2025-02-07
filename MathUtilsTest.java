@@ -82,7 +82,39 @@ public class MathUtilsTest {
         int solution5 = test.multiply(0, 0);
         assertEquals(0, solution5);
     }
-// test change
+
+    @Test
+    public void testDivide() {
+        MathUtils test = new MathUtils();
+        
+        // Test case 1: Divide two positive numbers
+        double result1 = test.divide(10, 2);
+        assertEquals(5.0, result1, 0.0001);
+        
+        // Test case 2: Divide a positive number by a negative number
+        double result2 = test.divide(10, -2);
+        assertEquals(-5.0, result2, 0.0001);
+        
+        // Test case 3: Divide two negative numbers
+        double result3 = test.divide(-10, -2);
+        assertEquals(5.0, result3, 0.0001);
+        
+        // Test case 4: Division resulting in a decimal
+        double result4 = test.divide(7, 2);
+        assertEquals(3.5, result4, 0.0001);
+        
+        // Test case 5: Division by zero
+        double result5 = test.divide(10, 0);
+        assertEquals(-1.0, result5, 0.0001);
+        
+        // Test case 6: Zero divided by any number
+        double result6 = test.divide(0, 5);
+        assertEquals(0.0, result6, 0.0001);
+        
+        // Test case 7: Zero divided by zero (should return -1.0 as per your implementation)
+        double result7 = test.divide(0, 0);
+        assertEquals(-1.0, result7, 0.0001);
+    }
 
 
 }
